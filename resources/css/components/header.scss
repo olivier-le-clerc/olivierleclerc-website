@@ -1,0 +1,76 @@
+
+@font-face {
+  font-family: 'futura-book';
+  src: local('futura-book') url(../../static/fonts/futura-book/futura-book.otf) format('opentype');
+}
+
+
+header{
+  margin: 2rem 0;
+}
+
+.branding h1{
+  font-family: 'futura-book';
+  font-size: 2.5rem;
+}
+
+
+.header-grid {
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 60% 1fr;
+  grid-template-areas:
+      "social branding toolbar"
+      "navbar navbar navbar";
+
+  .social {
+      grid-area: social;
+      justify-self: start;
+  }
+
+  .branding {
+      grid-area: branding;
+      justify-self: center;
+  }
+
+  nav {
+      grid-area: navbar;
+      justify-self: center;
+  }
+
+  .toolbar {
+      grid-area: toolbar;
+      justify-self: end;
+  }
+}
+// icons
+
+.icon-group {
+  font-size: 1.5rem;
+}
+
+// nav menus
+
+.menu{
+
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  .menu-item {
+      list-style: none;
+      transition: transform ease 0.3s;
+  }
+
+  .menu-item:hover {
+      transform: scale(1.3);
+  }
+
+  .menu-item a {
+      display: block;
+      color: black;
+      padding: 10px;
+  }
+
+}

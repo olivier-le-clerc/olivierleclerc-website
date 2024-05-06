@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "npm run frontend & npm run backend",
+    "frontend": "vite",
+    "backend": "php -S localhost:8000 -t public/"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "isotope-layout": "^3.0.6",
+    "vite": "^5.2.8"
+  },
+  "devDependencies": {
+    "sass": "^1.76.0"
+  }
+}

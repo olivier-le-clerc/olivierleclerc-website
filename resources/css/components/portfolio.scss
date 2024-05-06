@@ -1,0 +1,50 @@
+.portfolio-filters{
+  display: flex;
+  justify-content: center;
+  gap:0.5rem;
+
+  button{
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem;
+
+    &:hover{
+      cursor:pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+.gallery{
+  margin: 0 auto;
+  max-width: 100vw;
+
+  .portfolio-item{
+    height: auto;
+    width:250px;
+
+    &-wrapper{
+      margin:15px;
+
+      border-radius: 20px;
+      box-shadow: 0 0 10px grey;
+
+      overflow: hidden;
+
+    }
+  }
+
+  img{
+    width: 100%;
+    height: auto;
+    transition:all 0.3s;
+
+    &:hover{
+      transform: scale(1.1);
+      filter: brightness(1.2);
+      cursor: pointer;
+
+    }
+
+  }
+}
