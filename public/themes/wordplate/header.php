@@ -19,10 +19,14 @@
                 <li class="menu-item"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
             <div class="branding">
-                <h1>Olivier Le Clerc</h1>
+                <a href="<?= home_url() ?>"><h1>Olivier Le Clerc</h1></a>
             </div>
-            <ul class="toolbar icon-group menu">
-                <li class="menu-item"><a href=""><i class="fa-solid fa-right-to-bracket"></i></a></li>
+            <ul class="toolbar menu langage-select">
+                <!-- <li class="menu-item"> -->
+                    <?php if (function_exists('pll_the_languages')) {
+                        pll_the_languages();
+                    }?>
+                <!-- </li> -->
             </ul>
             <nav role="navigation">
                 <?php wp_nav_menu(['theme_location' => 'navigation']); ?>

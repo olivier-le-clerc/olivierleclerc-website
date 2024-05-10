@@ -4,86 +4,73 @@ require __DIR__ . '/wordplate-config.php';
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/c7d1f21538.js');
-
 });
 
-add_action('init', function () {
-
-    register_post_type('portfolio-item', [
-        'label' => 'Portfolio',
-        'public' => true,
-        'show_in_rest' => true,
-        'has_archive' => true,
-        'supports' => [
-            'thumbnail', 'title', 'editor'
-        ],
-    ]);
-
-    register_taxonomy('portfolio-taxonomy', 'portfolio-item', [
-        'public' => true,
-        'labels' => [
-            'name' => 'Catégories'
-        ],
-        'show_in_rest' => true,
-        'show_admin_column' => true
-    ]);
+// displays 100 items fro the porfolio
+add_filter('pre_get_posts', function (WP_Query $wp_query) {
+    if (isset($wp_query->query_vars['post_type']) && $wp_query->query_vars['post_type'] != 'portfolio') return;
+    $wp_query->query_vars['posts_per_page'] = 100;
 });
 
-add_filter('manage_portfolio-item_posts_columns', function ($columns) {
-    return [
-        "cb" => array_shift($columns),
-        'thumbnail' => 'Miniature',
-        ...$columns
-    ];
+// make portfolio the home page
+add_action('pre_get_posts', function ($wp_query) {
+    // Ensure this filter isn't applied to the admin area
+    if (is_admin()) {
+        return;
+    }
+
+    // Run if the home page is set to a static page
+    $page_id = $wp_query->get('page_id');
+
+    // $page_id=(pll_get_post($page_id,'fr'));
+
+    if ($page_id == get_option('page_on_front')) {
+        $wp_query->set('post_type', 'portfolio');
+        $wp_query->set('page_id', ''); //Empty
+
+        // Set properties that describe the page to reflect that we aren't really displaying a static page
+        $wp_query->is_page = 0;
+        $wp_query->is_singular = 0;
+        $wp_query->is_post_type_archive = 1;
+        $wp_query->is_archive = 1;
+
+        // Set pagination
+        $paged = !empty(get_query_var('page')) ? get_query_var('page') : 1;
+        $wp_query->set('paged', $paged);
+    }
 });
 
-add_action('manage_portfolio-item_posts_custom_column', function ($column_key, $post_id) {
-    if ($column_key == 'thumbnail') {
-        echo get_the_post_thumbnail($post_id, [80, 80]);
-    }
-}, 10, 2);
 
-add_action('admin_head', function () {
-    echo '<style>.column-thumbnail{width:90px;}</style>';
-}, 10, 0);
+// add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 
-add_filter('use_block_editor_for_post', function (bool $use_block_editor, WP_Post $post) {
-    return $post->post_type === 'portfolio-item' ? false : $use_block_editor;
-}, 10, 2);
+//disable block editor
+add_filter('use_block_editor_for_post', '__return_false');
 
-add_action('save_post_portfolio-item', function (int $post_id, WP_Post $post) {
-
-    $images_in_post_ids = get_images_id_from_content($post);
-    $attached_media_ids = array_map(fn (WP_Post $e) => $e->ID, get_attached_media('image', $post_id));
-
-    $attachments_to_remove = array_diff($attached_media_ids, $images_in_post_ids);
-    $attachments_to_add = array_diff($images_in_post_ids, $attached_media_ids);
-
-    foreach ($attachments_to_remove as $id) {
-        wp_update_post(['ID' => $id, 'post_parent' => 0]);
-    }
-
-    foreach ($attachments_to_add as $id) {
-        wp_update_post(['ID' => $id, 'post_parent' => $post_id]);
-    }
-}, 10, 2);
-
-function get_images_id_from_content(WP_Post $post)
-{
-    $result = [];
-    preg_match_all('/wp-image-([0-9]+)/', $post->post_content, $result, PREG_PATTERN_ORDER);
-    $result = $result[1];
-    $thumbnail_id = get_post_thumbnail_id($post);
-    if (!in_array($thumbnail_id, $result)) {
-        $result[] = $thumbnail_id;
-    }
-    return $result;
-}
 function get_portfolio_item_classes($post_id)
 {
-    $terms = wp_get_post_terms($post_id,'portfolio-taxonomy',[
+    $terms = wp_get_post_terms($post_id, 'portfolio-taxonomy', [
         'fields' => 'name'
     ]);
-    var_dump($terms);die();
+    var_dump($terms);
+    die();
     return implode(' ', $terms);
+}
+
+function get_portfolio_images(WP_Post $post = null)
+{
+
+    $post = get_post($post);
+
+    if (function_exists('pll_get_post')) {
+        $post = get_post(pll_get_post($post->ID, 'fr'));
+    }
+
+    $res = [];
+    preg_match_all('/<img.*?>/', $post->post_content, $res);
+    return $res[0];
+}
+
+function remove_images($str)
+{
+    return preg_replace('/<img.*?>/', '', $str);
 }

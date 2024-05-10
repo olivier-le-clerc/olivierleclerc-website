@@ -5,6 +5,9 @@ dotenv.config();
 
 export default defineConfig({
   publicDir: 'resources/static',
+  server: {
+    origin: 'http://localhost:5173'
+  },
   build: {
     assetsDir: '',
     emptyOutDir: true,

@@ -16,7 +16,6 @@
             <p>Nothing to see.</p>
         </article>
     <?php endif; ?>
-    "layout-public"
     </div>
 </main>
 

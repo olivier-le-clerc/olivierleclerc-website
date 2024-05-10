@@ -1,45 +1,47 @@
-.portfolio-filters{
+.portfolio-filters {
   display: flex;
   justify-content: center;
-  gap:0.5rem;
+  margin-bottom: 2rem;
+  gap: 0.5rem;
 
-  button{
+  button {
+    color: var(--secondary);
     background-color: transparent;
     border: none;
     padding: 0.5rem;
+    text-shadow: var(--text-shadow);
 
-    &:hover{
-      cursor:pointer;
+
+    &:hover {
+      cursor: pointer;
       text-decoration: underline;
     }
   }
 }
 
-.gallery{
+.gallery {
   margin: 0 auto;
   max-width: 100vw;
 
-  .portfolio-item{
+  .portfolio {
     height: auto;
-    width:250px;
+    width: 250px;
 
-    &-wrapper{
-      margin:15px;
+    &-wrapper {
+      margin: 15px;
 
       border-radius: 20px;
-      box-shadow: 0 0 10px grey;
-
+      box-shadow: var(--box-shadow);
       overflow: hidden;
-
     }
   }
 
-  img{
+  img {
     width: 100%;
     height: auto;
-    transition:all 0.3s;
+    transition: all 0.3s;
 
-    &:hover{
+    &:hover {
       transform: scale(1.1);
       filter: brightness(1.2);
       cursor: pointer;

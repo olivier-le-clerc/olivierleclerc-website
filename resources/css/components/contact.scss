@@ -1,0 +1,18 @@
+.wpcf7-form{
+
+  width: fit-content;
+  margin: 0 auto;
+
+  p{
+    text-shadow: var(--text-shadow);
+  }
+
+  input,textarea{
+    box-shadow: var(--text-shadow);
+    background-color: var(--primary);
+    // filter: blur(2px);
+
+    border: none;
+  }
+
+}

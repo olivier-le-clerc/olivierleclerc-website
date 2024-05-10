@@ -6,6 +6,8 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
+  background-color: var(--primary);
+  color: var(--secondary);
 }
 
 .container{
@@ -15,7 +17,14 @@ body {
 }
 
 a{
+  color:var(--link);
     text-decoration: none;
+}
+
+footer{
+  background-color: var(--secondary);
+  color: var(--primary);
+  padding:2rem;
 }
 
 

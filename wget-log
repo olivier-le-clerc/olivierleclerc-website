@@ -1,0 +1,11 @@
+--2024-05-08 10:41:47--  http://www.olivierleclerc.fr/fr/wp-json/wp/v2/port?
+Résolution de www.olivierleclerc.fr (www.olivierleclerc.fr)… 2001:41d0:301::21, 188.165.53.185
+Connexion à www.olivierleclerc.fr (www.olivierleclerc.fr)|2001:41d0:301::21|:80… connecté.
+requête HTTP transmise, en attente de la réponse… 200 OK
+Taille : non indiqué [application/json]
+Enregistre : ‘port?’
+
+port?                   [<=>              ]       0  --.-KB/s               port?                   [ <=>             ]  12,65K  --.-KB/s    ds 0,003s  
+
+2024-05-08 10:41:48 (3,90 MB/s) - ‘port?’ enregistré [12950]
+
