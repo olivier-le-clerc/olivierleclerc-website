@@ -1,23 +1,20 @@
 import Isotope from 'isotope-layout';
+
 import '../css/index.scss';
 
-setTimeout(function(){
+let iso;
 
-  let iso;
+//isotope
 let grid = document.querySelector('.gallery')
 if (grid) {
   iso = new Isotope(grid, {
     itemSelector: '.portfolio',
     masonry: {
       fitWidth: true,
+      gutter: 20,
     }
   })
-
 }
-
-},500)
-
-
 
 document.querySelector('.portfolio-filters')?.addEventListener('click', function (e) {
   if (!e.target.matches('button')) return

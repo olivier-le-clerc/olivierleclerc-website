@@ -19,13 +19,18 @@
                 <li class="menu-item"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
             <div class="branding">
-                <a href="<?= home_url() ?>"><h1>Olivier Le Clerc</h1></a>
+                <a href="<?= home_url() ?>">
+                    <h1>Olivier Le Clerc</h1>
+                </a>
             </div>
             <ul class="toolbar menu langage-select">
                 <!-- <li class="menu-item"> -->
-                    <?php if (function_exists('pll_the_languages')) {
-                        pll_the_languages();
-                    }?>
+                <?php if (function_exists('pll_the_languages')) {
+                    pll_the_languages([
+                        'hide_current' => 1,
+                        'force_home' => 1,
+                    ]);
+                } ?>
                 <!-- </li> -->
             </ul>
             <nav role="navigation">

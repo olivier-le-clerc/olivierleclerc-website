@@ -24,7 +24,8 @@
             <?php while (have_posts()) : the_post(); ?>
                 <div <?= post_class() ?>>
                     <div class="portfolio-wrapper">
-                        <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('medium') ?></a>
+                        <a href="<?php the_permalink() ?>">
+                        <?php the_post_thumbnail('thumb') ?></a>
                     </div>
                 </div>
             <?php endwhile; ?>

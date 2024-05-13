@@ -1,18 +1,49 @@
-.wpcf7-form{
+.title-is-contact {
+  max-width: 600px;
+  margin: auto;
 
-  width: fit-content;
-  margin: 0 auto;
-
-  p{
+  p {
     text-shadow: var(--text-shadow);
   }
 
-  input,textarea{
-    box-shadow: var(--text-shadow);
-    background-color: var(--primary);
-    // filter: blur(2px);
+}
+
+
+.wpcf7-form {
+
+  // text-align: justify;
+  margin: 0 auto 3rem;
+
+  p {
+    text-shadow: var(--text-shadow);
+  }
+
+  .wpcf7-spinner {
+    display: none;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    box-shadow: var(--box-shadow);
+    background-color: white;
 
     border: none;
+  }
+
+  input[type="submit"] {
+    padding: 1rem 2rem;
+    transition: all 0.3s;
+    max-width: fit-content;
+    background-color: var(--success);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+
   }
 
 }

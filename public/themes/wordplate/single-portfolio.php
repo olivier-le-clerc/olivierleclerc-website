@@ -8,9 +8,20 @@
                         <h1><?php the_title(); ?></h1>
                     </header>
 
-                    <?php foreach (get_portfolio_images() as $image) : ?>
-                        <?= $image ?>
-                    <?php endforeach ?>
+                    <div class="carousel-container">
+                        <div class="carousel" data-flickity='{ "imagesLoaded": true}'>
+
+
+                            <?php foreach (get_portfolio_images() as $image) : ?>
+                                <!-- <div class="carousel-cell"> -->
+                                <?= $image ?>
+
+                                <!-- </div>s -->
+
+                            <?php endforeach ?>
+
+                        </div>
+                    </div>
 
                     <?= remove_images(get_the_content()) ?>
                 </article>
