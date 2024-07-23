@@ -12,29 +12,46 @@
     <?php wp_body_open(); ?>
 
     <header class="site-header">
+
         <div class="container header-grid">
-            <ul class="social icon-group menu">
-                <li class="menu-item"><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                <li class="menu-item"><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-                <li class="menu-item"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
+
+            <div class="toolbar-left">
+
+                <div class="mobile-only item-list">
+                    <button id="navmenu-toggle" class="burger-menu icon-wrapper" onclick="document.querySelector('nav').classList.toggle('is-open')">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="desktop-only">
+                    <ul class="item-list">
+                        <li class="icon-wrapper"><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                        <li class="icon-wrapper"><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                        <li class="icon-wrapper"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="branding">
                 <a href="<?= home_url() ?>">
                     <h1>Olivier Le Clerc</h1>
                 </a>
             </div>
-            <ul class="toolbar menu langage-select">
-                <!-- <li class="menu-item"> -->
-                <?php if (function_exists('pll_the_languages')) {
-                    pll_the_languages([
-                        'hide_current' => 1,
-                        'force_home' => 1,
-                    ]);
-                } ?>
-                <!-- </li> -->
-            </ul>
+
+            <div class="toolbar-right">
+                <ul class="langage-select item-list">
+                    <?php if (function_exists('pll_the_languages')) {
+                        pll_the_languages([
+                            'hide_current' => 1,
+                            'force_home' => 1,
+                        ]);
+                    } ?>
+                </ul>
+            </div>
+
             <nav role="navigation">
                 <?php wp_nav_menu(['theme_location' => 'navigation']); ?>
             </nav>
+
         </div>
     </header>

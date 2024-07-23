@@ -5,8 +5,8 @@ require __DIR__ . '/wordplate-config.php';
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/c7d1f21538.js');
     //flickity
-    // wp_enqueue_script('flickity', "https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js");
-    // wp_enqueue_style('flickity','https://unpkg.com/flickity@2/dist/flickity.min.css');
+    wp_enqueue_script('flickity', "https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js");
+    wp_enqueue_style('flickity','https://unpkg.com/flickity@2/dist/flickity.min.css');
 
 });
 

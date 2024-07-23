@@ -12,6 +12,10 @@ header {
   font-size: 3rem;
 }
 
+.burger-menu {
+  border: none;
+  cursor: pointer;
+}
 
 .header-grid {
 
@@ -19,11 +23,11 @@ header {
   align-items: center;
   grid-template-columns: 1fr 60% 1fr;
   grid-template-areas:
-    "social branding toolbar"
+    "toolbar-left branding toolbar-right"
     "navbar navbar navbar";
 
-  .social {
-    grid-area: social;
+  .toolbar-left {
+    grid-area: toolbar-left;
     justify-self: start;
   }
 
@@ -37,35 +41,39 @@ header {
     justify-self: center;
   }
 
-  .toolbar {
-    grid-area: toolbar;
+  .toolbar-right {
+    grid-area: toolbar-right;
     justify-self: end;
   }
 }
 
 // icons
 
-.icon-group {
-  font-size: 1.3rem;
+.icon-wrapper {
+  font-size: 1.5rem;
+  transition: transform ease 0.3s;
+  background-color: transparent;
 
-  a {
-    transition: transform ease 0.3s;
-  }
-
-  a:hover {
+  &:hover {
     transform: scale(1.3);
-
   }
 }
 
-.social,
-.toolbar {
-
-  a {
-    color: var(--text);
-  }
-
+.item-list {
+  display: flex;
 }
+
+.item-list a,
+.item-list button {
+  padding: 10px;
+}
+
+.menu-item {
+  display: block;
+  padding: 10px;
+  background-color: transparent;
+}
+
 
 .langage-select {
   gap: 1rem;
@@ -76,6 +84,28 @@ header {
 nav {
   a {
     color: var(--link);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  nav {
+    width: 100%;
+    position: relative;
+
+    &.is-open .menu {
+      left: 0;
+    }
+
+    .menu {
+      position: absolute;
+      width: 100%;
+      left: -100%;
+      flex-direction: column;
+      transition: all 0.3s;
+      z-index: 10;
+      background-color: var(--primary);
+
+    }
   }
 }
 
@@ -92,11 +122,6 @@ nav {
 
   .menu-item a:hover {
     text-decoration: underline;
-  }
-
-  .menu-item a {
-    display: block;
-    padding: 10px;
   }
 
   .current-menu-item>a,

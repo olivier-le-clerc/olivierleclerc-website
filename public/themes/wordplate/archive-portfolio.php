@@ -25,12 +25,19 @@
                 <div <?= post_class() ?>>
                     <div class="portfolio-wrapper">
                         <a href="<?php the_permalink() ?>">
-                        <?php the_post_thumbnail('thumb') ?></a>
+                        <?php the_post_thumbnail('thumb', ['data-post-id' => get_the_ID()]) ?>
+                        </a>
                     </div>
                 </div>
             <?php endwhile; ?>
         </div>
     </div>
 </main>
+
+<div class="lightbox is-hidden">
+
+    <portfolio-item></portfolio-item>
+
+</div>
 
 <?php get_footer(); ?>

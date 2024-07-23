@@ -2,30 +2,31 @@
 
 <main>
     <div class="container">
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <article>
-                    <header>
-                        <h1><?php the_title(); ?></h1>
-                    </header>
+        <?php if (have_posts()) : the_post(); ?>
 
-                    <div class="carousel-container">
-                        <div class="carousel" data-flickity='{ "imagesLoaded": true}'>
+            <div class="single-item">
+                <?php $images = get_portfolio_images() ?>
 
+                <div class="item-description grid-description">
+                    <h1><?php the_title(); ?></h1>
+                    <p>
+                        <?= remove_images(get_the_content()) ?>
 
-                            <?php foreach (get_portfolio_images() as $image) : ?>
-                                <!-- <div class="carousel-cell"> -->
+                    </p>
+                </div>
+
+                <div class="grid-image">
+                    <div id="carousel" class="carousel">
+                        <?php foreach (get_portfolio_images() as $image) : ?>
+                            <div class="carousel-cell">
                                 <?= $image ?>
-
-                                <!-- </div>s -->
-
-                            <?php endforeach ?>
-
-                        </div>
+                            </div>
+                        <?php endforeach ?>
                     </div>
+                </div>
 
-                    <?= remove_images(get_the_content()) ?>
-                </article>
-            <?php endwhile; ?>
+
+            </div>
         <?php else : ?>
             <article>
                 <p>Nothing to see.</p>

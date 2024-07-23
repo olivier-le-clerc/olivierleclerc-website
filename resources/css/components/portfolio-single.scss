@@ -1,0 +1,45 @@
+.carousel {
+  height: 100%;
+  width: 100%;
+}
+
+.carousel img {
+  display: block;
+  max-width: inherit;
+  max-height: inherit;
+  height: inherit;
+  width: inherit;
+  object-fit:contain;
+  // object-position: 50% 0;
+}
+
+.carousel-cell {
+  background-color: var(--secondary);
+
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.single-item{
+  display: grid;
+  grid-template-areas: "image description";
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 600px;
+}
+
+.grid-image{
+  grid-area: image;
+}
+
+.grid-description{
+  grid-area: description;
+}
+
+// @media screen and ( min-width: 768px ) {
+//   .carousel img {
+//     height: 400px;
+//   }
+// }
