@@ -18,17 +18,13 @@
             <div class="toolbar-left">
 
                 <div class="mobile-only item-list">
-                    <button id="navmenu-toggle" class="burger-menu icon-wrapper" onclick="document.querySelector('nav').classList.toggle('is-open')">
+                    <button role="navmenu-toggle" class="burger-menu icon-wrapper">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
 
                 <div class="desktop-only">
-                    <ul class="item-list">
-                        <li class="icon-wrapper"><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                        <li class="icon-wrapper"><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-                        <li class="icon-wrapper"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                    </ul>
+                    <?php get_template_part('parts/social-media') ?>
                 </div>
             </div>
 
@@ -44,13 +40,24 @@
                         pll_the_languages([
                             'hide_current' => 1,
                             'force_home' => 1,
+                            'display_names_as' => 'slug'
                         ]);
                     } ?>
                 </ul>
             </div>
 
-            <nav role="navigation">
+            <nav id="main-navmenu" role="navigation">
+                <div class="mobile-navbar-header mobile-only">
+                    <div class="mobile-only item-list">
+                        <button role="navmenu-toggle" class="burger-menu icon-wrapper">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
                 <?php wp_nav_menu(['theme_location' => 'navigation']); ?>
+                <div class="mobile-navbar-footer mobile-only">
+                    <?php get_template_part('parts/social-media') ?>
+                </div>
             </nav>
 
         </div>
