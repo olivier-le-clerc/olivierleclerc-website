@@ -4,6 +4,7 @@
   justify-content: center;
   margin-bottom: 2rem;
   gap: 0.5rem;
+  flex-wrap: wrap;
 
   button {
     color: var(--secondary);
@@ -41,4 +42,16 @@
       filter: brightness(1.2);
     }
   }
+}
+
+@media screen and (max-width:650px) {
+  .portfolio{
+    max-width: calc(50% - 20px / 2); // 20px : isotope gutter;
+    height: auto;
+
+    & img{
+      height: auto;
+    }
+  }
+
 }

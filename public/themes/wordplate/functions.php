@@ -6,14 +6,20 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/c7d1f21538.js');
     //flickity
     wp_enqueue_script('flickity', "https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js");
-    wp_enqueue_style('flickity','https://unpkg.com/flickity@2/dist/flickity.min.css');
-
+    wp_enqueue_style('flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css');
 });
 
 // displays all items for the porfolio
 add_filter('pre_get_posts', function (WP_Query $wp_query) {
     if (isset($wp_query->query_vars['post_type']) && $wp_query->query_vars['post_type'] != 'portfolio') return;
     $wp_query->query_vars['posts_per_page'] = -1;
+});
+
+// add custom query vars
+
+add_filter('query_vars', function ($qvars) {
+    $qvars[] = 'item';
+    return $qvars;
 });
 
 // make portfolio the home page

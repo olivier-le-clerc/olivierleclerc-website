@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header();?>
 
 <main>
     <div class="container">
@@ -11,7 +11,6 @@
                     <h1><?php the_title(); ?></h1>
                     <p>
                         <?= remove_images(get_the_content()) ?>
-
                     </p>
                 </div>
 

@@ -47,27 +47,3 @@ document.querySelector('.portfolio-filters')?.addEventListener('click', function
   iso.arrange({ 'filter': filter })
 })
 
-// let lightbox = document.querySelector('.lightbox')
-
-// lightbox.addEventListener('click', function (e) {
-//   toggleLightBox()
-//   window.history.back()
-// })
-
-// document.querySelector('.gallery')?.addEventListener('click', async function (e) {
-//   let postId = e.target.dataset.postId
-//   if (!postId) {
-//     return
-//   }
-//   window.history.pushState({}, '', postId)
-//   toggleLightBox()
-//   let res = await fetch(window.origin + "/wp-json/wp/v2/portfolio/" + postId).then(e => e.json());
-//   console.log(res.title)
-//   // lightbox.innerHTML = res.title.rendered
-// })
-
-// function toggleLightBox() {
-//   lightbox.classList.toggle('is-hidden')
-// }
-
-customElements.define("portfolio-item", PortfolioItem)
