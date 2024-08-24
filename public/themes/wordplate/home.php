@@ -2,6 +2,7 @@
 
 <main>
     <div class="container">
+        
         <?php foreach (get_categories() as $category) : ?>
 
             <?php var_dump($category) ?>
