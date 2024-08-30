@@ -1,0 +1,11 @@
+{
+  "resources/js/index.js": {
+    "file": "index-OMgD6Wnj.js",
+    "name": "index",
+    "src": "resources/js/index.js",
+    "isEntry": true,
+    "css": [
+      "index-D6VYSYMa.css"
+    ]
+  }
+}
