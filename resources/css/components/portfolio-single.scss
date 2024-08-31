@@ -1,6 +1,5 @@
 .single-item img{
-  display: block;
-  margin: 1%;
+  margin: 1% auto;
   width: 98%;
   height: auto;
 }
@@ -8,7 +7,9 @@
 @media screen and (max-width:899px) {
   .single-item h1{
     font-size: 20px;
-    margin-bottom: 2rem;;
+  }
+  .item-description{
+    margin: 2rem auto;
   }
 }
 
@@ -17,7 +18,7 @@
   .single-item {
     display: grid;
     grid-template-areas: "image description";
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 60% 40%;
 
   }
 
@@ -27,6 +28,7 @@
 
   .grid-description {
     grid-area: description;
+    padding: 1rem;
   }
 
 }
