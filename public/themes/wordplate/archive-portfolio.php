@@ -25,7 +25,7 @@
 
         <div class="portfolio-filters mobile-only">
             <select id="filters-select-dropdown" name="filters-select-dropdown" class="filters-select-dropdown">
-                <option value="*">Tout</option>
+                <option value="*">Filtrer</option>
                 <?php foreach (
                     get_terms(
                         [

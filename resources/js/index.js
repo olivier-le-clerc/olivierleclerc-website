@@ -40,7 +40,11 @@ if (carousselNeeded) {
   carousel.dataset['flickity'] = JSON.stringify(flickityConfig)
 }
 
+window.addEventListener('resize',function(e){
+  iso.arrange()
+})
 
+//bind filter on filter button click
 document.querySelector('.portfolio-filters')?.addEventListener('click', function (e) {
   if (!e.target.matches('button')) return
   let filter = e.target.dataset.filter
@@ -51,6 +55,5 @@ document.querySelector('.portfolio-filters')?.addEventListener('click', function
 document.querySelector('.filters-select-dropdown').addEventListener( 'change', function(e) {
   // get filter value from option value
   var filter = e.target.selectedOptions.item(0).value;
-  // use filterFn if matches value
   iso.arrange({ 'filter': filter })
 });
