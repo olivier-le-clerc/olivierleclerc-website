@@ -2,18 +2,16 @@
 
 require __DIR__ . '/wordplate-config.php';
 
-add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/c7d1f21538.js');
-    //flickity
-    wp_enqueue_script('flickity', "https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js");
-    wp_enqueue_style('flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css');
-});
-
 // displays all items for the porfolio
 add_filter('pre_get_posts', function (WP_Query $wp_query) {
     if (isset($wp_query->query_vars['post_type']) && $wp_query->query_vars['post_type'] != 'portfolio') return;
     $wp_query->query_vars['posts_per_page'] = -1;
 });
+
+if(function_exists('pll_register_string')){
+    pll_register_string('tout',"Tout");
+    pll_register_string('filtrer',"Filtrer");
+}
 
 // add custom query vars
 
@@ -31,8 +29,6 @@ add_action('pre_get_posts', function ($wp_query) {
 
     // Run if the home page is set to a static page
     $page_id = $wp_query->get('page_id');
-
-    // $page_id=(pll_get_post($page_id,'fr'));
 
     if ($page_id == get_option('page_on_front')) {
         $wp_query->set('post_type', 'portfolio');

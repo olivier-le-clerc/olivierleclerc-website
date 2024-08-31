@@ -1,4 +1,4 @@
-<?php get_header();?>
+<?php get_header(); ?>
 
 <main>
     <div class="container">
@@ -6,6 +6,7 @@
 
             <div class="single-item">
                 <?php $images = get_portfolio_images() ?>
+
 
                 <div class="item-description grid-description">
                     <h1><?php the_title(); ?></h1>
@@ -15,21 +16,17 @@
                 </div>
 
                 <div class="grid-image">
-                    <div id="carousel" class="carousel">
-                        <?php foreach (get_portfolio_images() as $image) : ?>
-                            <div class="carousel-cell">
-                                <?= $image ?>
-                            </div>
-                        <?php endforeach ?>
-                    </div>
+                    <?php foreach (get_portfolio_images() as $image) : ?>
+                        <div class="carousel-cell">
+                            <?= $image ?>
+                        </div>
+                    <?php endforeach ?>
                 </div>
 
 
+
+
             </div>
-        <?php else : ?>
-            <article>
-                <p>Nothing to see.</p>
-            </article>
         <?php endif; ?>
     </div>
 </main>

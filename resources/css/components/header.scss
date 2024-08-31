@@ -14,8 +14,17 @@ header {
 }
 
 @media screen and (max-width: 900px) {
+
+  header{
+    margin-bottom: 0.5rem;
+  }
+
+  nav{
+    font-size: 20px;;
+  }
+
   .branding h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 

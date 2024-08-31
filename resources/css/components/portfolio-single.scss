@@ -1,45 +1,34 @@
-.carousel {
-  height: 100%;
-  width: 100%;
+.single-item img{
+  margin: 1% auto;
+  width: 98%;
+  height: auto;
 }
 
-.carousel img {
-  display: block;
-  max-width: inherit;
-  max-height: inherit;
-  height: inherit;
-  width: inherit;
-  object-fit:contain;
-  // object-position: 50% 0;
+@media screen and (max-width:899px) {
+  .single-item h1{
+    font-size: 20px;
+  }
+  .item-description{
+    margin: 2rem auto;
+  }
 }
 
-.carousel-cell {
-  background-color: var(--secondary);
+@media screen and (min-width:900px) {
 
-  max-width: 100%;
-  height: 100%;
-  width: 100%;
-  margin: 0 1rem;
-  overflow: hidden;
+  .single-item {
+    display: grid;
+    grid-template-areas: "image description";
+    grid-template-columns: 60% 40%;
+
+  }
+
+  .grid-image {
+    grid-area: image;
+  }
+
+  .grid-description {
+    grid-area: description;
+    padding: 1rem;
+  }
+
 }
-
-.single-item{
-  display: grid;
-  grid-template-areas: "image description";
-  grid-template-columns: 70% 30%;
-  grid-template-rows: 600px;
-}
-
-.grid-image{
-  grid-area: image;
-}
-
-.grid-description{
-  grid-area: description;
-}
-
-// @media screen and ( min-width: 768px ) {
-//   .carousel img {
-//     height: 400px;
-//   }
-// }
