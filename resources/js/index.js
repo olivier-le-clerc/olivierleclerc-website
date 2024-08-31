@@ -18,6 +18,7 @@ let grid = document.querySelector('.gallery')
 if (grid) {
   iso = new Isotope(grid, {
     itemSelector: '.portfolio',
+    // resize:false,
     masonry: {
       fitWidth: true,
       gutter: 20,
@@ -41,7 +42,11 @@ if (carousselNeeded) {
 }
 
 window.addEventListener('resize',function(e){
-  iso.arrange()
+  console.log('resize')
+  this.setTimeout(function(){
+    iso.layout()
+
+  },1000)
 })
 
 //bind filter on filter button click

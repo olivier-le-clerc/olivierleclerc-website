@@ -15,6 +15,11 @@ add_filter('pre_get_posts', function (WP_Query $wp_query) {
     $wp_query->query_vars['posts_per_page'] = -1;
 });
 
+if(function_exists('pll_register_string')){
+    pll_register_string('tout',"Tout");
+    pll_register_string('filtrer',"Filtrer");
+}
+
 // add custom query vars
 
 add_filter('query_vars', function ($qvars) {
@@ -31,8 +36,6 @@ add_action('pre_get_posts', function ($wp_query) {
 
     // Run if the home page is set to a static page
     $page_id = $wp_query->get('page_id');
-
-    // $page_id=(pll_get_post($page_id,'fr'));
 
     if ($page_id == get_option('page_on_front')) {
         $wp_query->set('post_type', 'portfolio');

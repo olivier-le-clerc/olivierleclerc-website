@@ -1,11 +1,16 @@
-<?php get_header(); ?>
+<?php get_header();
+
+$tout = function_exists('pll__') ? pll__('Tout') : 'Tout';
+$filtrer = function_exists('pll__') ? pll__('Filtrer') : 'Filtrer';
+
+?>
 
 <main>
     <div class="container">
 
         <div class="portfolio-filters desktop-only">
             <button data-filter="*">
-                Tous
+    <?= $tout ?>
             </button>
             <?php foreach (
                 get_terms(
@@ -25,7 +30,7 @@
 
         <div class="portfolio-filters mobile-only">
             <select id="filters-select-dropdown" name="filters-select-dropdown" class="filters-select-dropdown">
-                <option value="*">Filtrer</option>
+                <option value="*"><?= $filtrer ?></option>
                 <?php foreach (
                     get_terms(
                         [
