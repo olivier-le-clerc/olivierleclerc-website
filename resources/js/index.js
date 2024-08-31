@@ -24,32 +24,16 @@ if (grid) {
       gutter: 20,
     }
   })
-}
 
-//flickity
+  window.addEventListener('resize',function(e){
+    console.log('resize')
+    this.setTimeout(function(){
+      iso.layout()
 
-let flickityConfig = {
-  imagesLoaded: true,
-  percentPosition: false,
-  pageDots: false,
-  autoPlay: true,
-}
+    },1000)
+  })
 
-let carousselNeeded = (document.querySelectorAll(".carousel-cell").length > 1)
-if (carousselNeeded) {
-  let carousel = document.getElementById("carousel")
-  carousel.dataset['flickity'] = JSON.stringify(flickityConfig)
-}
-
-window.addEventListener('resize',function(e){
-  console.log('resize')
-  this.setTimeout(function(){
-    iso.layout()
-
-  },1000)
-})
-
-//bind filter on filter button click
+  //bind filter on filter button click
 document.querySelector('.portfolio-filters')?.addEventListener('click', function (e) {
   if (!e.target.matches('button')) return
   let filter = e.target.dataset.filter
@@ -62,3 +46,8 @@ document.querySelector('.filters-select-dropdown').addEventListener( 'change', f
   var filter = e.target.selectedOptions.item(0).value;
   iso.arrange({ 'filter': filter })
 });
+}
+
+
+
+
