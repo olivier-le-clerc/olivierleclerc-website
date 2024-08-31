@@ -1,14 +1,9 @@
 <?php get_header(); ?>
 
 <main>
-    <div class="container">
-        
-        <?php foreach (get_categories() as $category) : ?>
+    <div class="points-de-vente container">
 
-            <?php var_dump($category) ?>
-        <?php endforeach ?>
-
-        <!-- <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <section <?php post_class('title-is-' . strtolower(get_the_title())) ?>>
                     <?php if (!is_page()) : ?>
                         <header>
@@ -25,7 +20,7 @@
             <section>
                 <p>Nothing to see.</p>
             </section>
-        <?php endif; ?> -->
+        <?php endif; ?>
     </div>
 </main>
 
