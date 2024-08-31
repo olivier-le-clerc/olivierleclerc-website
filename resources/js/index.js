@@ -47,3 +47,10 @@ document.querySelector('.portfolio-filters')?.addEventListener('click', function
   iso.arrange({ 'filter': filter })
 })
 
+// bind filter on select change
+document.querySelector('.filters-select-dropdown').addEventListener( 'change', function(e) {
+  // get filter value from option value
+  var filter = e.target.selectedOptions.item(0).value;
+  // use filterFn if matches value
+  iso.arrange({ 'filter': filter })
+});
