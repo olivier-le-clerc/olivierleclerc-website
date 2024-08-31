@@ -2,10 +2,6 @@
 
 require __DIR__ . '/wordplate-config.php';
 
-add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/c7d1f21538.js');
-});
-
 // displays all items for the porfolio
 add_filter('pre_get_posts', function (WP_Query $wp_query) {
     if (isset($wp_query->query_vars['post_type']) && $wp_query->query_vars['post_type'] != 'portfolio') return;

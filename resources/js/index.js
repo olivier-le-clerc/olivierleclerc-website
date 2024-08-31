@@ -1,8 +1,6 @@
 import Isotope from 'isotope-layout';
 
 import '../css/index.scss';
-import { PortfolioItem } from './components/PortfolioItem';
-
 
 // navmenu toggle buttons
 document.querySelectorAll('[role="navmenu-toggle"').forEach(button=>{
