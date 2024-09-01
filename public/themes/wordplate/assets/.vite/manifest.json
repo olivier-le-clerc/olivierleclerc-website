@@ -1,53 +1,11 @@
 {
-  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
-    "file": "fa-brands-400-Dur5g48u.ttf",
-    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
-  },
-  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
-    "file": "fa-brands-400-O7nZalfM.woff2",
-    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
-  },
-  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "fa-regular-400-Bf3rG5Nx.ttf",
-    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
-  },
-  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "fa-regular-400-DgEfZSYE.woff2",
-    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
-  },
-  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "fa-solid-900-BV3CbEM2.ttf",
-    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
-  },
-  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "fa-solid-900-DOQJEhcS.woff2",
-    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
-  },
-  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf": {
-    "file": "fa-v4compatibility-B9MWI-E6.ttf",
-    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf"
-  },
-  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2": {
-    "file": "fa-v4compatibility-BX8XWJtE.woff2",
-    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
-  },
   "resources/js/index.js": {
-    "file": "index-t9H08u11.js",
+    "file": "index-v4cztdar.js",
     "name": "index",
     "src": "resources/js/index.js",
     "isEntry": true,
     "css": [
-      "index-CoEFSh6K.css"
-    ],
-    "assets": [
-      "fa-brands-400-O7nZalfM.woff2",
-      "fa-brands-400-Dur5g48u.ttf",
-      "fa-regular-400-DgEfZSYE.woff2",
-      "fa-regular-400-Bf3rG5Nx.ttf",
-      "fa-solid-900-DOQJEhcS.woff2",
-      "fa-solid-900-BV3CbEM2.ttf",
-      "fa-v4compatibility-BX8XWJtE.woff2",
-      "fa-v4compatibility-B9MWI-E6.ttf"
+      "index-D_fv6KkH.css"
     ]
   }
 }
