@@ -19,6 +19,8 @@ add_action('after_setup_theme', function () {
 add_action('wp_enqueue_scripts', function () {
     $manifestPath = get_theme_file_path('assets/.vite/manifest.json');
 
+    wp_enqueue_script('font-awesome',"https://kit.fontawesome.com/c7d1f21538.js");
+
     if (
         wp_get_environment_type() === 'local' &&
         is_array(wp_remote_get('http://localhost:5173/')) // is Vite.js running
